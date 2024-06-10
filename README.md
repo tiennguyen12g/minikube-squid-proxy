@@ -49,6 +49,7 @@ spec:
   selector:
     app: proxy
 ```
+
 2. Create proxy-pod
 ```
 # proxy-pod.yaml
@@ -73,6 +74,11 @@ spec:
   - name: squid-config
     configMap:
       name: squid-config
+```
+We have to create file squid.conf to config the squid access.
+```
+http_access allow all
+http_port 3128
 ```
 3. Run
 ** Node: if you have run proxy-pod before, you should delete it to make it work correctly (kubectl delete pod proxy-pod)
