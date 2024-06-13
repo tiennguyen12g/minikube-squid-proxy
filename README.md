@@ -94,4 +94,15 @@ kubectl describe service proxy-service
 kubectl run test-pod --rm -it --image=appropriate/curl -- sh
 curl 172.24.245.196:32000
 ```
+** How to get ip cluster (172.24.245.196 is cluster ip)
+```
+kubectl cluster-info
+```
+Output: 172.26.75.91 is ip which set on browser to connect proxy-server
+```
+Kubernetes control plane is running at https://172.26.75.91:8443
+CoreDNS is running at https://172.26.75.91:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+```
+
    
